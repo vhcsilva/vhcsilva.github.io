@@ -9,7 +9,7 @@
 
 - 📫 How to reach me **vhcsilvaa@gmail.com**
 
-- 📄 Know about my experiences [https://www.linkedin.com/in/vitor-hugo-86b4b79b/](https://www.linkedin.com/in/vitor-hugo-86b4b79b/)
+- 📄 Know about my experiences [https://www.linkedin.com/in/vhcsilva](https://www.linkedin.com/in/vhcsilva)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
