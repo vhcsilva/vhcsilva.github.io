@@ -3,7 +3,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=vhcsilva&label=Profile%20views&color=0e75b6&style=flat" alt="vhcsilva" /> </p>
 
-- 🔭 I’m currently working on [BePro Network](https://www.bepro.network/)
+- 🔭 I’m currently working on [TAIKAI](https://www.taikai.network/)
 
 - 🌱 I’m currently learning **ReactJS and NextJS**
 
