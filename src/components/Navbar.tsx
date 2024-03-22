@@ -8,7 +8,7 @@ import { NavbarButton } from '@/components/NavbarButton'
 export function Navbar() {
   return (
     <nav
-      className={`fixed flex top-4 w-min inset-x-0 mx-auto lg:mx-0 lg:top-1/4 lg:left-3 lg:flex-col gap-3 bg-gray-700 rounded-full p-1
+      className={`fixed z-50 flex top-4 w-min inset-x-0 mx-auto lg:mx-0 lg:top-1/4 lg:left-3 lg:flex-col gap-3 bg-gray-700 rounded-full p-1
       justify-center align-middle lg:w-14`}
     >
       <NavbarButton sectionId="about" label="About" icon={<UserIcon />} title="Go to about section" />
