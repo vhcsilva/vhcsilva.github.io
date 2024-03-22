@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  /* Font family by Github (https://github.com/githubnext/monaspace) */
+  font-family: 'Monaspace';
+  src: url('/fonts/MonaspaceNeonVarVF.woff2') format('woff2-variations');
+  font-weight: 400 500 700;
+  font-style: normal;
+}
+
+@layer base {
+  html {
+    font-family: 'Monaspace', system-ui, sans-serif;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  h4 {
+    @apply text-base;
+  }
+
+  h5 {
+    @apply text-sm;
+  }
+
+  h6 {
+    @apply text-xs;
+  }
+}
+
+body {
+  /* Pattern generated on https://10015.io/tools/css-background-pattern-generator */
+  background-image: radial-gradient(#212121 1px, transparent 1px), radial-gradient(#212121 1px, transparent 1px);
+  background-size: 58px 58px;
+  background-position:
+    0 0,
+    29px 29px;
+  background-color: #0c0c0c;
+}
