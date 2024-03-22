@@ -53,12 +53,7 @@ export function AboutSection() {
       </div>
 
       <div className="w-full">
-        <p className="text-gray-300 font-normal text-justify">
-          Dolore sit anim nulla et. Aute ad consectetur consequat exercitation. Ipsum esse ex ullamco pariatur
-          consectetur aliquip aliqua labore. Consectetur quis non proident sit Lorem irure eu mollit reprehenderit enim
-          reprehenderit ut ut. Lorem culpa culpa tempor amet excepteur ex esse elit non et adipisicing do ut laborum.
-          Laboris sint labore ut dolore aliquip esse dolor reprehenderit non mollit.
-        </p>
+        <p className="text-gray-300 font-normal text-justify"></p>
       </div>
     </Section>
   )

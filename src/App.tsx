@@ -3,6 +3,7 @@ import { TechnologySection } from '@/components/TechnologySection'
 import { TimelineSection } from '@/components/TimelineSection'
 import { Navbar } from '@/components/Navbar'
 import { ProjectsSection } from '@/components/ProjectsSection'
+import { Credits } from '@/components/Credits'
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
         <ProjectsSection />
         <TechnologySection />
       </main>
+
+      <footer>
+        <Credits />
+      </footer>
     </>
   )
 }
