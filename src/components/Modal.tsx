@@ -18,10 +18,10 @@ export function Modal({ title, isVisible, children, onCloseClick }: Modal) {
 
   return (
     <div
-      className="fixed z-[1055] inset-0 h-full w-full backdrop-blur-sm flex items-center justify-center p-5"
+      className="fixed z-[1055] inset-0 h-full w-full backdrop-blur-sm flex items-center justify-center"
       onClick={onBackdropClick}
     >
-      <div className="bg-gray-700 p-6 rounded-lg w-full h-min lg:w-3/4 xl:w-1/2">
+      <div className="bg-gray-700 p-6 rounded-lg w-full h-full md:h-min lg:w-3/4 xl:w-1/2">
         <div className="flex items-center justify-between text-white font-bold mb-5">
           <h2>{title}</h2>
 
