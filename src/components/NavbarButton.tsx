@@ -1,16 +1,25 @@
 import { ReactNode } from 'react'
 
 type NavbarButtonProps = {
-  href: string
+  sectionId: string
   label: string
   icon: ReactNode
   title: string
 }
 
-export function NavbarLink({ href, label, icon, title }: NavbarButtonProps) {
+export function NavbarButton({ sectionId, label, icon, title }: NavbarButtonProps) {
+  function scroll() {
+    const el = document.getElementById(sectionId)
+    if (!el) return
+    window.scroll({
+      top: el.offsetTop - 80,
+      behavior: 'smooth'
+    })
+  }
+
   return (
-    <a
-      href={href}
+    <button
+      onClick={scroll}
       link-label={label}
       title={title}
       className={`relative flex hover:bg-gray-300 text-white align-middle py-2 px-3
@@ -18,6 +27,6 @@ export function NavbarLink({ href, label, icon, title }: NavbarButtonProps) {
       lg:hover:after:visible lg:hover:w-40`}
     >
       {icon}
-    </a>
+    </button>
   )
 }
