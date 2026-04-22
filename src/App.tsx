@@ -1,25 +1,34 @@
-import { AboutSection } from '@/components/AboutSection'
-import { TechnologySection } from '@/components/TechnologySection'
-import { TimelineSection } from '@/components/TimelineSection'
-import { Navbar } from '@/components/Navbar'
-import { ProjectsSection } from '@/components/ProjectsSection'
-import { Credits } from '@/components/Credits'
+import { BackgroundLayers } from '@/components/BackgroundLayers'
+import { ContactSection } from '@/components/ContactSection'
+import { ExperienceSection } from '@/components/ExperienceSection'
+import { Footer } from '@/components/Footer'
+import { Hero } from '@/components/Hero'
+import { StackSection } from '@/components/StackSection'
+import { TopBar } from '@/components/TopBar'
+import { WorkSection } from '@/components/WorkSection'
+import { useLocaleContext } from '@/i18n/useLocaleContext'
+import { useNavActive } from '@/hooks/useNavActive'
+import { useReveal } from '@/hooks/useReveal'
 
 function App() {
+  const active = useNavActive()
+  const { locale, t } = useLocaleContext()
+  useReveal(locale)
+
   return (
     <>
-      <Navbar />
+      <BackgroundLayers />
+      <TopBar active={active} locationLine={t('location.line')} />
 
-      <main className="py-10 md:pt-0 px-5 lg:px-0 w-full flex flex-col gap-5 items-center">
-        <AboutSection />
-        <TimelineSection />
-        <ProjectsSection />
-        <TechnologySection />
+      <main>
+        <Hero />
+        <ExperienceSection />
+        <StackSection />
+        <WorkSection />
+        <ContactSection />
       </main>
 
-      <footer>
-        <Credits />
-      </footer>
+      <Footer />
     </>
   )
 }

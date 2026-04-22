@@ -1,11 +1,13 @@
-import { Technology } from "@/types/technologies"
+import type { Localized } from '@/i18n/locale'
+import type { Technology } from '@/types/technologies'
 
 export type Project = {
   name: string
-  shortDescription: string
-  longDescription: string
-  repository: string
+  shortDescription: Localized
+  longDescription: Localized
+  repository?: string
   appUrl?: string
+  figmaUrl?: string
   techs: Technology[]
   preview: string
 }

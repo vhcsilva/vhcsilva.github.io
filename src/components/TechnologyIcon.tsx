@@ -25,9 +25,10 @@ import { Technology } from '@/types/technologies'
 type TechnologyIcon = {
   technology: Technology
   variant?: 'small' | 'big'
+  className?: string
 }
 
-export function TechnologyIcon({ technology, variant = 'small' }: TechnologyIcon) {
+export function TechnologyIcon({ technology, variant = 'small', className }: TechnologyIcon) {
   const icon =
     {
       [Technology.CSS]: CSSIcon,
@@ -58,5 +59,9 @@ export function TechnologyIcon({ technology, variant = 'small' }: TechnologyIcon
     big: 60
   }[variant]
 
-  return <span title={technology}>{icon({ width: size, height: size })}</span>
+  return (
+    <span title={technology} className={className}>
+      {icon({ width: size, height: size })}
+    </span>
+  )
 }

@@ -1,35 +1,32 @@
-import { MouseEvent, ReactNode } from 'react'
+import type { MouseEvent, ReactNode } from 'react'
 
 import { CloseIcon } from '@/assets/icons/close'
 
-type Modal = {
+import styles from '@/components/Modal.module.css'
+
+type ModalProps = {
   title: string
   isVisible: boolean
   children?: ReactNode
   onCloseClick: () => void
 }
 
-export function Modal({ title, isVisible, children, onCloseClick }: Modal) {
+export function Modal({ title, isVisible, children, onCloseClick }: ModalProps) {
   function onBackdropClick(e: MouseEvent<HTMLDivElement>) {
-    if ((e.target as HTMLDivElement).className.includes('backdrop')) onCloseClick()
+    if (e.target === e.currentTarget) onCloseClick()
   }
 
-  if (!isVisible) return <></>
+  if (!isVisible) return null
 
   return (
-    <div
-      className="fixed z-[1055] inset-0 h-full w-full backdrop-blur-sm flex items-center justify-center"
-      onClick={onBackdropClick}
-    >
-      <div className="bg-gray-700 p-6 rounded-lg w-full h-full md:h-min lg:w-3/4 xl:w-1/2">
-        <div className="flex items-center justify-between text-white font-bold mb-5">
-          <h2>{title}</h2>
-
-          <button onClick={onCloseClick}>
-            <CloseIcon height={30} />
+    <div className={styles.backdrop} onClick={onBackdropClick} role="presentation">
+      <div className={styles.panel} role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div className={styles.header}>
+          <h2 id="modal-title">{title}</h2>
+          <button type="button" className={styles.close} onClick={onCloseClick} aria-label="Close dialog">
+            <CloseIcon height={28} />
           </button>
         </div>
-
         {children}
       </div>
     </div>

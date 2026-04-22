@@ -1,0 +1,53 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#hero,
+#experience,
+#stack,
+#work,
+#contact {
+  scroll-margin-top: 72px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Project cards: open detail modal */
+.projReadMore {
+  margin-top: 14px;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--accent);
+  padding: 6px 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.projReadMore:hover {
+  background: var(--accent-dim);
+  color: var(--fg);
+}
+
+.projTechIcons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.projTechIcons span {
+  display: inline-flex;
+  color: var(--fg-dim);
+}
+
+.projTechIcons span svg {
+  opacity: 0.85;
+}

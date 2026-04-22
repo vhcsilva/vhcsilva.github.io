@@ -1,0 +1,21 @@
+:root {
+  --bg: #0a0c0a;
+  --bg-raised: #0f1210;
+  --bg-sunk: #07080710;
+  --panel: #11141280;
+  --line: #1d221e;
+  --line-strong: #2a302b;
+  --fg: #e6eae6;
+  --fg-dim: #8a918a;
+  --fg-dimmer: #5a605a;
+  --accent: #7CFF6B;
+  --accent-dim: #7CFF6B30;
+  --warn: #ffb86b;
+  --red: #ff6b6b;
+  --blue: #6bb8ff;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --gap: 16px;
+  --radius: 4px;
+  --maxw: 1180px;
+}
