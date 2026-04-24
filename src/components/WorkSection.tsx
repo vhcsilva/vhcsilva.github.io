@@ -1,3 +1,5 @@
+import posthog from 'posthog-js'
+
 import { SectionHead } from '@/components/SectionHead'
 import { projects } from '@/data/projects'
 import { pick } from '@/i18n/locale'
@@ -38,17 +40,38 @@ export function WorkSection() {
             {(project.appUrl || project.repository || project.figmaUrl) && (
               <div className="proj-links">
                 {project.appUrl && (
-                  <a href={project.appUrl} target="_blank" rel="noreferrer">
+                  <a
+                    href={project.appUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() =>
+                      posthog.capture('project_link_clicked', { project: project.name, link_type: 'site' })
+                    }
+                  >
                     {t('modal.site')}
                   </a>
                 )}
                 {project.repository && (
-                  <a href={project.repository} target="_blank" rel="noreferrer">
+                  <a
+                    href={project.repository}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() =>
+                      posthog.capture('project_link_clicked', { project: project.name, link_type: 'repo' })
+                    }
+                  >
                     {t('modal.repo')}
                   </a>
                 )}
                 {project.figmaUrl && (
-                  <a href={project.figmaUrl} target="_blank" rel="noreferrer">
+                  <a
+                    href={project.figmaUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() =>
+                      posthog.capture('project_link_clicked', { project: project.name, link_type: 'figma' })
+                    }
+                  >
                     {t('modal.figma')}
                   </a>
                 )}

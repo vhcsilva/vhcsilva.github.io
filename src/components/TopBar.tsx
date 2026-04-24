@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import posthog from 'posthog-js'
 
 import type { SectionId } from '@/hooks/useNavActive'
 import { useLocaleContext } from '@/i18n/useLocaleContext'
@@ -30,7 +31,7 @@ export function TopBar({ active, locationLine }: TopBarProps) {
 
   useEffect(() => {
     function tick() {
-      const d = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }));
+      const d = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }))
 
       setClock(`${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`)
     }
@@ -97,7 +98,10 @@ export function TopBar({ active, locationLine }: TopBarProps) {
                   <a
                     href={href}
                     className={isActive ? 'active' : undefined}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => {
+                      setMenuOpen(false)
+                      posthog.capture('nav_link_clicked', { section: id })
+                    }}
                   >
                     <span className="n">{n}</span> {t(labelKey)}
                   </a>
@@ -109,10 +113,24 @@ export function TopBar({ active, locationLine }: TopBarProps) {
 
         <div className="status">
           <div className="lang-switch" role="group" aria-label="Language">
-            <button type="button" className={locale === 'en' ? 'on' : undefined} onClick={() => setLocale('en')}>
+            <button
+              type="button"
+              className={locale === 'en' ? 'on' : undefined}
+              onClick={() => {
+                setLocale('en')
+                posthog.capture('language_switched', { locale: 'en' })
+              }}
+            >
               EN
             </button>
-            <button type="button" className={locale === 'pt' ? 'on' : undefined} onClick={() => setLocale('pt')}>
+            <button
+              type="button"
+              className={locale === 'pt' ? 'on' : undefined}
+              onClick={() => {
+                setLocale('pt')
+                posthog.capture('language_switched', { locale: 'pt' })
+              }}
+            >
               PT-BR
             </button>
           </div>
